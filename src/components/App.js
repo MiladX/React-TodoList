@@ -30,7 +30,7 @@ function App() {
         <Content>
           <TodoAdd />
           <TodoDisplay />
-          <ul>
+          {/* <ul>
             {todoItems.map((item) => (
               <li key={item.id}>
                 <input
@@ -41,7 +41,7 @@ function App() {
                 {item.id}. {item.title}
               </li>
             ))}
-          </ul>
+          </ul> */}
         </Content>
       </Layout>
     </>

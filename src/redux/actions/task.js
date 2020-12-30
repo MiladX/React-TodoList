@@ -1,22 +1,25 @@
 import { createAction } from "@reduxjs/toolkit";
 
 const setTask = createAction("TASK");
-const setTaskId = createAction("TASK_ID");
-
 export function getTask() {
   return (dispatch) => dispatch(setTask(localStorage.getItem("task")));
 }
 
+const setTaskId = createAction("TASK_ID");
+export function getTaskId() {
+  return (dispatch) => dispatch(setTaskId(localStorage.getItem("taskId") ?? 1));
+}
+
+const addTaskDone = createAction("TASK_ADD_DONE");
 export function addTask(task) {
   localStorage.setItem("task", task);
-  return (dispatch) => dispatch(setTask(localStorage.getItem("task")));
+  return (dispatch) => dispatch(addTaskDone(true));
 }
 
-export function getTaskId() {
-  return (dispatch) => dispatch(setTaskId(localStorage.getItem("taskId")));
-}
-
+const addTaskIdDone = createAction("TASK_ID_ADD_DONE");
 export function addTaskId(id) {
-  localStorage.setItem("taskId", id);
-  return (dispatch) => dispatch(setTaskId(localStorage.getItem("taskId")));
+  console.log(id);
+  let newId = id ? parseInt(id) + 1 : 1;
+  localStorage.setItem("taskId", newId);
+  return (dispatch) => dispatch(addTaskIdDone(true));
 }

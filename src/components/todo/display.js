@@ -10,11 +10,13 @@ function TodoDisplay() {
       title: "No.",
       dataIndex: "id",
       key: "id",
+      sorter: (a, b) => a.id - b.id,
     },
     {
       title: "Title",
       dataIndex: "title",
       key: "title",
+      sorter: (a, b) => a.title.localeCompare(b.title),
     },
     {
       title: "Action",

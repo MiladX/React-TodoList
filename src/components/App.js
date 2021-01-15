@@ -2,8 +2,8 @@ import { Layout } from "antd";
 import "../assets/css/App.css";
 import "antd/dist/antd.css";
 
-import TodoDisplay from "./todo/display";
-import TodoAdd from "./todo/add";
+import TodoDisplay from "./todo/Display";
+import TodoAdd from "./todo/Add";
 
 function App() {
   const { Header, Content } = Layout;
